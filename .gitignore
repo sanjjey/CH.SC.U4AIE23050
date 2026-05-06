@@ -1,3 +1,4 @@
-node_modules
-package-lock.json
-package.json
+node_modules/
+notification_app_be/
+*.png
+vehicle_maintanance_scheduler/server.js
