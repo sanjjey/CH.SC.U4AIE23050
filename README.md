@@ -1,14 +1,14 @@
 # Logging Middleware & Microservices
 
-This repository contains the solutions for the microservice development challenge, broken down into three main components:
+The solutions for the microservice development challenge are included in this repository, which is divided into three parts:
 
 ## 1. Logging Middleware
-A reusable `logger.js` file at the root directory that handles sending structured application logs to an external API endpoint.
+Root-level `logger.js` file that can be reused for sending structured application logs to an external API endpoint.
 - **File**: `logger.js`
-- **Usage**: Included in the other services to automatically log execution state, successes, and errors.
+- **Usage**: Logged automatically, based on execution state, successes and errors.
 
 ## 2. Vehicle Maintenance Scheduler
-An Express-based microservice that solves the Knapsack problem. It fetches depots and vehicles data from a protected API, calculates the maximum operational impact score achievable within a given total mechanic-hours budget, and returns the list of optimal tasks to be executed.
+A microservice written with the help of Express for the Knapsack problem. It pulls depots and vehicles data from a protected API, and then works out the highest possible impact score that can be achieved over a determined number of mechanic-hours and outputs the list of optimal tasks to execute.
 - **Location**: `/vehicle_maintanance_scheduler`
 - **How to run**:
   ```bash
@@ -17,11 +17,11 @@ An Express-based microservice that solves the Knapsack problem. It fetches depot
   ```
 - **How to test**: 
   1. Open Postman.
-  2. Send a `GET` request to `http://localhost:3000/run-scheduler`.
-  3. Under the Headers tab, add `Authorization` as the key and your JWT token (e.g., `Bearer YOUR_TOKEN`) as the value.
+  2. Now make a `GET` request to `http://localhost:3000/run-scheduler`.
+  3. On the Headers tab, put `Authorization` as the key and your JWT token (e.g., `Bearer YOUR_TOKEN`) as the value.
 
-## 3. Campus Notifications Microservice (Priority Inbox)
-A script that dynamically fetches user notifications, adds a priority weight based on the notification type (`Placement` > `Result` > `Event`), sorts them by weight and recency, and returns the top `N` notifications.
+## 3. Notify students of class activities in the priority inbox on campus.
+Script that fetches user notifications dynamically, assigns a priority weight to each notification, based on the type of notification (notifications can be of type Placement, Result or Event), sorts them by priority weight and recency, and returns top N notifications from the sorted list.
 - **Location**: `/notification_app_be`
 - **How to run**:
   ```bash
@@ -31,7 +31,7 @@ A script that dynamically fetches user notifications, adds a priority weight bas
   *(Example: `node priority_inbox.js eyJhbGci... 15` to get the top 15 notifications)*
 
 ## Setup
-Make sure you have Node.js installed. Run the following command in the root folder to install dependencies:
+Make sure you have Node.js installed. In the root folder, run the following command to install dependencies:
 ```bash
 npm install
 ```
